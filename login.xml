@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Created by http://cafe.naver.com/citrineframework
+    You can freely copy, distribute, modify for commercial or non-commercial purposes.
+-->
+<MOML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.applusform.com/xsd/moml_ui.xsd" version="1.1.1">
+    <FUNCTION id="shake">
+		<CMD cmd="root.block.visible='invisible'"/>        
+        <CMD cmd="animation.flyIn('loginbox', 20, 0, 100, 'easeOut3|roundTrip4|reverse', 500, '')"/>
+    </FUNCTION>
+
+
+    
+    	
+    
+    
+    <UILAYOUT portrait="720,1096" landscape="720,1096" >
+		
+
+        <STYLEBUTTON id="loginbox" layout="65,300,600,600" align="linear:vertical|center|subCenter" defaultImg="#f4665a"  shape="roundRect(10)" borderStyle="solid:1|#55ffffff" enabled="false">
+            
+			<LABEL  layout="500,130" text="SIGN IN" fontSize="40" fontStyle="bold" textColor="#fceeed" textAlign="center"  textShadow="#55777777"/>	
+       
+		    <STYLEBUTTON id="name" layout="560,100" align="linear:vertical|center" shape="roundRect(10)" defaultImg="#fceeed" >
+			      <EDIT layout="500,100"  placeholder="Name" returnKeyType="next" 	fontSize="40" fontColor="#f4665a" fontStyle="bold" textAlign="vCenter" defaultImg="#fceeed"/>
+		     </STYLEBUTTON>  
+			<WINDOW layout="600,20" defaultImg="#00000000"/>  
+			
+		    <STYLEBUTTON id="name" layout="560,100" align="linear:holizontal|center|subCenter" shape="roundRect(10)" defaultImg="#fceeed" >
+			      <EDIT layout="428,100"  placeholder="Password" returnKeyType="next" 	fontSize="40" fontColor="#f4665a" fontStyle="bold" textAlign="vCenter" defaultImg="#fceeed"/>
+			      <BUTTON id="confirm" layout="72,66" defaultImg="res/arrow.png" onClick="root.block.visible='visible',animation.rotate('root.confirm', 720*2, 36, 33,'easeInOut4', 4000,'function.shake')"/>
+		     </STYLEBUTTON>  
+		      
+		    
+		    <WINDOW layout="560,220" align="linear:vertical|center|vJustify" defaultImg="#00000000">
+
+		        <BUTTON  layout="550,70" text="forgot?" margin="0,0,0,0" fontSize="30" fontStyle="bold" textColor="#fceeed" textAlign="right|bottom"  textShadow="#55777777" defaultImg="#00000000" onClick="device.toastPopup('Think more!')"/>
+		        
+		        <WINDOW layout="560,60" align="linear:holizontal|center|hJustify" defaultImg="#00000000">
+		            
+					<LABEL  layout="200,50" text="SIGN IN WITH" fontSize="50" fontStyle="bold" textColor="#fceeed" textAlign="right|vCenter"  textShadow="#55777777"/>
+					
+					<WINDOW layout="300,50" align="linear:holizontal|right" defaultImg="#00000000">
+			            <BUTTON layout="50,50" defaultImg="res/facebook.png" onClick="device.toastPopup('facebook login')"/>
+			            <BUTTON layout="50,50" defaultImg="res/twitter.png" onClick="device.toastPopup('twitter login')"/>
+
+		            </WINDOW>
+		        </WINDOW>
+		        		        
+	        </WINDOW>
+		    	
+        </STYLEBUTTON>
+        <WINDOW id="block"  layout="0,0,720,1096" defaultImg="#44000000" visible="invisible"  onClick="'noclick'"/>        
+    </UILAYOUT>
+
+</MOML>
